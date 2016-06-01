@@ -1,4 +1,5 @@
-﻿using LinkTrimmer.Models;
+﻿using Data;
+using LinkTrimmer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,16 +18,21 @@ namespace LinkTrimmer.Controllers
         [HttpPost]
         public string Trim([FromBody]TrimRequest value)
         {
-            var coockieName = "link.trimmer.cookie";
-
-            var coockie = HttpContext.Current.Request.Cookies[coockieName];
-
-            if (coockie == null) coockie = new HttpCookie(coockieName, Guid.NewGuid().ToString());
             
-            //coockie.Values.A
 
-            coockie.Expires = DateTime.Now.AddHours(1);
-            HttpContext.Current.Response.Cookies.Add(coockie);
+            using (var context = new DataContext())
+            {
+                var link = new LinkData
+                {
+                    Source = value.BaseUrl,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = Guid.NewGuid(),
+                };
+
+                context.Links.Add(link);
+
+                int i = link.Id;
+            }
 
             return string.Format("{0} {1}", value == null ? "" : value.BaseUrl, "Hello, World");
         }

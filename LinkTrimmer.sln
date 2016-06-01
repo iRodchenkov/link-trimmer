@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkTrimmer", "LinkTrimmer\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkTrimmer.Tests", "LinkTrimmer.Tests\LinkTrimmer.Tests.csproj", "{C9B71ACF-3B9E-4F7E-9445-96685BC1265D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{5BA82AA1-D716-4BB0-A8BC-3A21880E5DD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{1705B393-95EF-4D47-AF8C-EEBE2FEBC18C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{C9B71ACF-3B9E-4F7E-9445-96685BC1265D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9B71ACF-3B9E-4F7E-9445-96685BC1265D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9B71ACF-3B9E-4F7E-9445-96685BC1265D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BA82AA1-D716-4BB0-A8BC-3A21880E5DD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BA82AA1-D716-4BB0-A8BC-3A21880E5DD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BA82AA1-D716-4BB0-A8BC-3A21880E5DD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BA82AA1-D716-4BB0-A8BC-3A21880E5DD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1705B393-95EF-4D47-AF8C-EEBE2FEBC18C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1705B393-95EF-4D47-AF8C-EEBE2FEBC18C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1705B393-95EF-4D47-AF8C-EEBE2FEBC18C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1705B393-95EF-4D47-AF8C-EEBE2FEBC18C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
