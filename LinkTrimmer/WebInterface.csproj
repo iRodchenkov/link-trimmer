@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>iRodchenkov.LinkTrimmer</RootNamespace>
-    <AssemblyName>iRodchenkov.LinkTrimmer</AssemblyName>
+    <RootNamespace>iRodchenkov.WebInterface</RootNamespace>
+    <AssemblyName>WebInterface</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -81,6 +81,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\app.js" />
+    <Content Include="App\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="App\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="App\bootstrap\css\bootstrap.css" />
+    <Content Include="App\bootstrap\css\bootstrap.min.css" />
+    <Content Include="App\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="App\bootstrap\js\bootstrap.js" />
+    <Content Include="App\bootstrap\js\bootstrap.min.js" />
+    <Content Include="App\bootstrap\js\npm.js" />
     <Content Include="App\html\stats.html" />
     <Content Include="App\html\trimmer.html" />
     <Content Include="App\index.html" />
@@ -95,9 +103,7 @@
   <ItemGroup>
     <Compile Include="App_Start\CookieUserProvider.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\LinkTrimmerController.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Controllers\LinkController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -108,6 +114,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="App\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="App\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="App\bootstrap\css\bootstrap.css.map" />
+    <Content Include="App\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="App\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="App\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -34,7 +34,7 @@ theApp.config(function ($stateProvider, $urlRouterProvider)
 
     $scope.trim = function ()
     {
-        $http.post('/api/link-trimmer/trim', { SourceUrl: $scope.data }).success(function (data)
+        $http.post('/api/link/trim', { SourceUrl: $scope.data }).success(function (data)
         {
             $scope.data = data;
         });
