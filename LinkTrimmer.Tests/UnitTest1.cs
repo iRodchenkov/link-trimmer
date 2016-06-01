@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace LinkTrimmer.Tests
+namespace iRodchenkov.WebInterface.Tests
 {
     [TestClass]
     public class UnitTest1

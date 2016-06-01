@@ -1,4 +1,4 @@
-﻿using Logic;
+﻿using iRodchenkov.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Web.Http;
 using System.Web.Routing;
 using System.Web.Security;
 
-namespace LinkTrimmer
+namespace iRodchenkov.WebInterface
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
@@ -15,7 +15,7 @@ namespace LinkTrimmer
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
-            SecurityManager.Init(null);
+            SecurityManager.Init(new CookieUserProvider());
         }
     }
 }

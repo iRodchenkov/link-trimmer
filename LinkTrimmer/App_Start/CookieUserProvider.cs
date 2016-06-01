@@ -1,10 +1,10 @@
-﻿using Logic;
+﻿using iRodchenkov.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace LinkTrimmer
+namespace iRodchenkov.WebInterface
 {
     public class CookieUserProvider : IUserProvider
     {

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace LinkTrimmer.Models
+namespace iRodchenkov.WebInterface.Models
 {
     public class TrimRequest
     {
-        public string BaseUrl { get; set; }
+        public string SourceUrl { get; set; }
     }
 }

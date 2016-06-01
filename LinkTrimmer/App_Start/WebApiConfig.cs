@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace LinkTrimmer
+namespace iRodchenkov.WebInterface
 {
     public static class WebApiConfig
     {

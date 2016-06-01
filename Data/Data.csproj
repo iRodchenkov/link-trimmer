@@ -7,8 +7,8 @@
     <ProjectGuid>{5BA82AA1-D716-4BB0-A8BC-3A21880E5DD3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Data</RootNamespace>
-    <AssemblyName>Data</AssemblyName>
+    <RootNamespace>iRodchenkov.Data</RootNamespace>
+    <AssemblyName>iRodchenkov.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <PublishUrl>publish\</PublishUrl>
