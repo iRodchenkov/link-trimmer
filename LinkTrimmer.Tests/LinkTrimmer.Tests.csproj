@@ -60,9 +60,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{5ba82aa1-d716-4bb0-a8bc-3a21880e5dd3}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LinkTrimmer\WebInterface.csproj">
       <Project>{379EEFD4-7E2F-448F-91D6-93D4E2C54F5A}</Project>
       <Name>WebInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{1705b393-95ef-4d47-af8c-eebe2febc18c}</Project>
+      <Name>Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

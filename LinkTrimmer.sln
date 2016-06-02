@@ -4,8 +4,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebInterface", "LinkTrimmer\WebInterface.csproj", "{379EEFD4-7E2F-448F-91D6-93D4E2C54F5A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1705B393-95EF-4D47-AF8C-EEBE2FEBC18C} = {1705B393-95EF-4D47-AF8C-EEBE2FEBC18C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkTrimmer.Tests", "LinkTrimmer.Tests\LinkTrimmer.Tests.csproj", "{C9B71ACF-3B9E-4F7E-9445-96685BC1265D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1705B393-95EF-4D47-AF8C-EEBE2FEBC18C} = {1705B393-95EF-4D47-AF8C-EEBE2FEBC18C}
+		{5BA82AA1-D716-4BB0-A8BC-3A21880E5DD3} = {5BA82AA1-D716-4BB0-A8BC-3A21880E5DD3}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{5BA82AA1-D716-4BB0-A8BC-3A21880E5DD3}"
 EndProject
