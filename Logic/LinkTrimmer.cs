@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace iRodchenkov.Logic
 {
-    public class LinkTrimmer : IDisposable
+    public sealed class LinkTrimmer : IDisposable
     {
         DataContext m_DataCotext = null;
 
@@ -26,7 +27,7 @@ namespace iRodchenkov.Logic
         /// </summary>
         /// <param name="a_SourceUrl">Original Url</param>
         /// <returns>Trimmed Url</returns>
-        public string CreateLink(string a_SourceUrl)
+        public LinkInfo CreateLink(string a_SourceUrl)
         {
             var link = new LinkData
             {
@@ -38,7 +39,15 @@ namespace iRodchenkov.Logic
             m_DataCotext.Links.Add(link);
             m_DataCotext.SaveChanges();
 
-            return string.Format("http://localhost:3476/{0}", link.Id);
+            return new LinkInfo(link);
+        }
+
+        public LinkInfo[] HistoryForCurrentUser(int a_Skip, int a_Take, out int a_Total)
+        {
+            var q = m_DataCotext.Links.Where(x => x.CreatedBy == SecurityManager.CurrentUser);
+            a_Total = q.Count();
+
+            return q.OrderByDescending(x => x.CreatedAt).Skip(a_Skip).Take(a_Take).ToArray().Select(x => new LinkInfo(x)).ToArray();
         }
     }
 }

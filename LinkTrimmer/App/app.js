@@ -1,5 +1,5 @@
 ﻿
-var theApp = angular.module('LinkTrimmer', ['ui.router']);
+var theApp = angular.module('LinkTrimmer', ['ui.router', 'ngclipboard']);
 
 theApp.run(
     ['$rootScope', '$state', '$stateParams',
@@ -22,25 +22,31 @@ theApp.config(function ($stateProvider, $urlRouterProvider)
         controller: 'TrimmerController'
     });
         
-    $stateProvider.state("stats", {
-        url: "/stats",
-        templateUrl: '/App/html/stats.html',
-        controller: 'StatsController'
+    $stateProvider.state("history", {
+        url: "/history",
+        templateUrl: '/App/html/history.html',
+        controller: 'HistoryController'
     });
 })
 .controller('TrimmerController', function ($scope, $state, $http, $rootScope)
 {
-    $scope.data = "Test text!32";
-
     $scope.trim = function ()
     {
-        $http.post('/api/link/trim', { SourceUrl: $scope.data }).success(function (data)
+        $http.post('/api/link/trim', { SourceUrl: $scope.url }).success(function (data)
         {
-            $scope.data = data;
+            $scope.url = data;
         });
     }
 })
-.controller('StatsController', function ($scope, $state, $http, $rootScope)
+.controller('HistoryController', function ($scope, $state, $http, $rootScope)
 {
-    $scope.data = "224";
+    $scope.page = 1;
+    $scope.pagination = [$scope.page];
+
+    $scope.items = [];
+
+    $http.post('/api/link/history', { Page: $scope.page }).success(function (data)
+    {
+        $scope.items = data.Items;
+    });
 });

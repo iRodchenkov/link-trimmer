@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace iRodchenkov.Data
 {
-    public class DataContext : DbContext
+    public sealed class DataContext : DbContext
     {
         public DataContext()
             : base("name=LinkTrimmerConnectionString")

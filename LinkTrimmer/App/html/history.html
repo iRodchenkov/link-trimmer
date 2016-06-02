@@ -1,0 +1,20 @@
+﻿<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+                <td><a href="{{item.TrimmedUrl}}">{{item.TrimmedUrl}}</a></td>
+                <td><a href="{{item.SourceUrl}}">{{item.SourceUrl}}</a></td>
+                <td>{{item.CreatedAt | date: 'dd.MM.yy HH:mm'}}</td>
+                <td>{{item.Clicks}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

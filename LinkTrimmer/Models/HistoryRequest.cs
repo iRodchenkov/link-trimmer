@@ -5,8 +5,8 @@ using System.Web;
 
 namespace iRodchenkov.WebInterface.Models
 {
-    public sealed class TrimRequest
+    public sealed class HistoryRequest
     {
-        public string SourceUrl { get; set; }
+        public int Page { get; set; }
     }
 }

@@ -80,6 +80,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\app.css" />
     <Content Include="App\app.js" />
     <Content Include="App\bootstrap\css\bootstrap-theme.css" />
     <Content Include="App\bootstrap\css\bootstrap-theme.min.css" />
@@ -89,12 +90,13 @@
     <Content Include="App\bootstrap\js\bootstrap.js" />
     <Content Include="App\bootstrap\js\bootstrap.min.js" />
     <Content Include="App\bootstrap\js\npm.js" />
-    <Content Include="App\html\stats.html" />
+    <Content Include="App\html\history.html" />
     <Content Include="App\html\trimmer.html" />
     <Content Include="App\index.html" />
     <Content Include="App\js\angular-ui-router.min.js" />
     <Content Include="App\js\angular.min.js" />
     <Content Include="App\js\jquery.min.js" />
+    <Content Include="App\js\ngclipboard.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -107,6 +109,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\HistoryRequest.cs" />
     <Compile Include="Models\TrimRequest.cs">
       <SubType>Code</SubType>
     </Compile>

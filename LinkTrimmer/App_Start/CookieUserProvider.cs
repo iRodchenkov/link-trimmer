@@ -15,10 +15,8 @@ namespace iRodchenkov.WebInterface
 
         public Guid CurrentUserId()
         {
-            if (HttpContext.Current.Session[c_UserIdField] != null) return (Guid)HttpContext.Current.Session[c_UserIdField];
-
             var userId = CreateOrUpdateCoockie();
-            HttpContext.Current.Session[c_UserIdField] = userId;
+
             return userId;
         }
 
