@@ -22,11 +22,6 @@ namespace iRodchenkov.Logic
             if (m_DataCotext != null) m_DataCotext.Dispose();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="a_SourceUrl">Original Url</param>
-        /// <returns>Trimmed Url</returns>
         public LinkInfo CreateLink(string a_SourceUrl)
         {
             var link = new LinkData
@@ -48,6 +43,19 @@ namespace iRodchenkov.Logic
             a_Total = q.Count();
 
             return q.OrderByDescending(x => x.CreatedAt).Skip(a_Skip).Take(a_Take).ToArray().Select(x => new LinkInfo(x)).ToArray();
+        }
+
+        public string GetOriginalUrl(int a_Id)
+        {
+            var link = m_DataCotext.Links.FirstOrDefault(x => x.Id == a_Id);
+
+            if (link == null) return string.Empty;
+
+            ++link.Clicks;
+
+            m_DataCotext.SaveChanges();
+
+            return link.Source;
         }
     }
 }
