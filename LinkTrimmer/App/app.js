@@ -30,12 +30,20 @@ theApp.config(function ($stateProvider, $urlRouterProvider)
 })
 .controller('TrimmerController', function ($scope, $state, $http, $rootScope)
 {
+    $scope.trimmed = false;
+
     $scope.trim = function ()
     {
         $http.post('/api/link/trim', { SourceUrl: $scope.url }).success(function (data)
         {
             $scope.url = data;
+            $scope.trimmed = true;
         });
+    }
+
+    $scope.urlChanged = function ()
+    {
+        $scope.trimmed = false;
     }
 })
 .controller('HistoryController', function ($scope, $state, $http, $rootScope)

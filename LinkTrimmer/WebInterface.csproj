@@ -95,6 +95,7 @@
     <Content Include="App\index.html" />
     <Content Include="App\js\angular-ui-router.min.js" />
     <Content Include="App\js\angular.min.js" />
+    <Content Include="App\js\clipboard.min.js" />
     <Content Include="App\js\jquery.min.js" />
     <Content Include="App\js\ngclipboard.min.js" />
     <Content Include="Global.asax" />

@@ -1,8 +1,57 @@
-﻿#AppPanel
+﻿#workspace
 {
-    width: 800px;
+    width: 660px;
     left: 50%;
-    margin-left: -400px;
+    margin-left: -330px;
     position: relative;
+}
+
+.trimmer-zone
+{
     margin-top: 200px;
+}
+
+.fright
+{
+    float: right;
+}
+
+.hidden
+{
+    display: none !important;
+}
+
+.history-item
+{
+    padding-bottom: 15px;
+    padding-top: 25px;
+    border-bottom: 1px solid #ededed;
+}
+
+.history-item a, .history-item a:hover
+{
+    text-decoration: none;
+}
+
+.history-item .title-row
+{
+    line-height: 17px;
+    padding-bottom: 15px;
+}
+
+.history-item .title-row a
+{
+    font-size: 16px;
+    line-height: 19px;
+    display: inline-block;
+    width: 80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #444;
+}
+
+.history-item .trimmed-row
+{
+
 }

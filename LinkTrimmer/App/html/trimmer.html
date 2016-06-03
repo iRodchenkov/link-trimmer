@@ -1,7 +1,8 @@
 ﻿
-<div class="input-group">
-    <input type="text" class="form-control" placeholder="Url" ng-model="url">
+<div class="input-group trimmer-zone">
+    <input type="text" class="form-control" placeholder="Url" ng-model="url" ng-change="urlChanged()">
     <span class="input-group-btn">
-        <button class="btn btn-default" type="button" ng-click="trim()"><span class="glyphicon glyphicon-link"></span>&nbsp;Trim</button>
+        <button ng-show="!trimmed" class="btn btn-default" type="button" ng-click="trim()"><span class="glyphicon glyphicon-link"></span>&nbsp;Trim</button>
+        <button ng-if="trimmed" class="btn btn-default" type="button" ngclipboard data-clipboard-text="{{url}}"><span class="glyphicon glyphicon-copy"></span>&nbsp;Copy</button>
     </span>
 </div>

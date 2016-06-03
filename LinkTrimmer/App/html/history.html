@@ -1,20 +1,13 @@
 ﻿<div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="item in items">
-                <td><a href="{{item.TrimmedUrl}}">{{item.TrimmedUrl}}</a></td>
-                <td><a href="{{item.SourceUrl}}">{{item.SourceUrl}}</a></td>
-                <td>{{item.CreatedAt | date: 'dd.MM.yy HH:mm'}}</td>
-                <td>{{item.Clicks}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="history-item" ng-repeat="item in items">
+        <div class="title-row">
+            <a href="{{item.SourceUrl}}" title="{{item.SourceUrl}}">{{item.SourceUrl}}</a>
+            <span class="fright" title="Created at">{{item.CreatedAt | date: 'dd.MM.yy HH:mm'}}</span>
+        </div>
+        <div class="trimmed-row">
+            <a href="{{item.TrimmedUrl}}">{{item.TrimmedUrl}}</a>
+            <button class="btn btn-primary btn-xs" title="Copy to clipboard" ngclipboard data-clipboard-text="{{item.TrimmedUrl}}"><span class=" glyphicon glyphicon-copy"></span></button>
+            <span class="fright glyphicon glyphicon-stats" title="Click number">&nbsp;{{item.Clicks}}</span>
+        </div>
+    </div>
 </div>
