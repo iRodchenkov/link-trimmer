@@ -36,8 +36,28 @@ theApp.config(function ($stateProvider, $urlRouterProvider)
     {
         $http.post('/api/link/trim', { SourceUrl: $scope.url }).success(function (data)
         {
-            $scope.url = data;
-            $scope.trimmed = true;
+            if (data.R.HasErrors)
+            {
+                var displayError = function (error)
+                {
+                    var alert = '<div class="alert alert-danger validation-error fade in" role="alert"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
+                    alert += error;
+                    alert += '</div>';
+
+                    $('#workspace').append(alert);
+                    setTimeout(function ()
+                    {
+                        $('.validation-error').alert('close');
+                    }, 2500);
+                };
+
+                displayError(data.R.AllErrors);
+            }
+            else
+            {
+                $scope.url = data.Link.TrimmedUrl;
+                $scope.trimmed = true;
+            }
         });
     }
 

@@ -22,8 +22,21 @@ namespace iRodchenkov.Logic
             if (m_DataCotext != null) m_DataCotext.Dispose();
         }
 
-        public LinkInfo CreateLink(string a_SourceUrl)
+        void ValidateUrl(string a_Url, OperationResult R)
         {
+            Uri url;
+
+            if (!Uri.TryCreate(a_Url, UriKind.Absolute, out url))
+            {
+                R.AddError("Bad url format");
+            }
+        }
+
+        public LinkInfo CreateLink(string a_SourceUrl, OperationResult R)
+        {
+            ValidateUrl(a_SourceUrl, R);
+            if (R.HasErrors) return null;
+
             var link = new LinkData
             {
                 Source = a_SourceUrl,

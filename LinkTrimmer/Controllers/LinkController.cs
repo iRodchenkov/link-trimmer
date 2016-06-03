@@ -18,11 +18,18 @@ namespace iRodchenkov.WebInterface.Controllers
 
         [Route("trim")]
         [HttpPost]
-        public string Trim([FromBody]TrimRequest value)
+        public object Trim([FromBody]TrimRequest value)
         {
             using (var trimmer = new LinkTrimmer())
             {
-                return trimmer.CreateLink(value.SourceUrl).TrimmedUrl;
+                var r = new OperationResult();
+                var res = trimmer.CreateLink(value.SourceUrl, r);
+
+                return new
+                {
+                    Link = res,
+                    R = r,
+                };
             }
         }
 
@@ -40,7 +47,7 @@ namespace iRodchenkov.WebInterface.Controllers
                 if (total % c_ItemsOnPage != 0) ++pages;
 
                 var pagination = new List<int>();
-                for(int p = Math.Max(1, value.Page - c_Delta); p <= Math.Min(value.Page + c_Delta, pages); ++p) pagination.Add(p);
+                for (int p = Math.Max(1, value.Page - c_Delta); p <= Math.Min(value.Page + c_Delta, pages); ++p) pagination.Add(p);
 
                 return new
                 {
