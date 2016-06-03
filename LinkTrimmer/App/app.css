@@ -65,3 +65,14 @@
     left: 50%;
     margin-left: -250px;
 }
+
+.pagination li a
+{
+    cursor: pointer;
+}
+
+.pagination li a.current-page
+{
+    cursor: inherit;
+    color: black;
+}

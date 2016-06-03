@@ -58,6 +58,11 @@ namespace iRodchenkov.Logic
             return q.OrderByDescending(x => x.CreatedAt).Skip(a_Skip).Take(a_Take).ToArray().Select(x => new LinkInfo(x)).ToArray();
         }
 
+        /// <summary>
+        /// ++Click
+        /// </summary>
+        /// <param name="a_Id"></param>
+        /// <returns></returns>
         public string GetOriginalUrl(int a_Id)
         {
             var link = m_DataCotext.Links.FirstOrDefault(x => x.Id == a_Id);

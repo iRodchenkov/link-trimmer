@@ -24,7 +24,7 @@
                 <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
-        <li><a ng-repeat="p in pagination" ng-click="selectPage(p.Page);">{{p.Page}}</a></li>
+        <li><a ng-repeat="p in pagination" ng-click="selectPage(p.Page);" ng-class="{ 'current-page': p.Page == page }">{{p.Page}}</a></li>
         <li>
             <a ng-click="selectPage(pages);" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
