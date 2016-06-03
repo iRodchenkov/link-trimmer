@@ -31,9 +31,11 @@ theApp.config(function ($stateProvider, $urlRouterProvider)
 .controller('TrimmerController', function ($scope, $state, $http, $rootScope)
 {
     $scope.trimmed = false;
+    $scope.processing = false;
 
     $scope.trim = function ()
     {
+        $scope.processing = true;
         $http.post('/api/link/trim', { SourceUrl: $scope.url }).success(function (data)
         {
             if (data.R.HasErrors)
@@ -58,6 +60,8 @@ theApp.config(function ($stateProvider, $urlRouterProvider)
                 $scope.url = data.Link.TrimmedUrl;
                 $scope.trimmed = true;
             }
+
+            $scope.processing = false;
         });
     }
 
@@ -68,6 +72,8 @@ theApp.config(function ($stateProvider, $urlRouterProvider)
 })
 .controller('HistoryController', function ($scope, $state, $http, $rootScope)
 {
+    $scope.loading = true;
+
     $scope.page = $scope.pages = 1;
     $scope.pagination = [{ Page: $scope.page }];
 
@@ -75,12 +81,14 @@ theApp.config(function ($stateProvider, $urlRouterProvider)
 
     $scope.selectPage = function (page)
     {
+        $scope.loading = true;
         $scope.page = page;
         $http.post('/api/link/history', { Page: $scope.page }).success(function (data)
         {
             $scope.items = data.Items;
             $scope.pages = data.Pages;
             $scope.pagination = data.Pagination;
+            $scope.loading = false;
         });
 
         return false;
