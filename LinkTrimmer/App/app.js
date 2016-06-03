@@ -48,13 +48,23 @@ theApp.config(function ($stateProvider, $urlRouterProvider)
 })
 .controller('HistoryController', function ($scope, $state, $http, $rootScope)
 {
-    $scope.page = 1;
-    $scope.pagination = [$scope.page];
+    $scope.page = $scope.pages = 1;
+    $scope.pagination = [{ Page: $scope.page }];
 
     $scope.items = [];
 
-    $http.post('/api/link/history', { Page: $scope.page }).success(function (data)
+    $scope.selectPage = function (page)
     {
-        $scope.items = data.Items;
-    });
+        $scope.page = page;
+        $http.post('/api/link/history', { Page: $scope.page }).success(function (data)
+        {
+            $scope.items = data.Items;
+            $scope.pages = data.Pages;
+            $scope.pagination = data.Pagination;
+        });
+
+        return false;
+    }
+
+    $scope.selectPage($scope.page);
 });

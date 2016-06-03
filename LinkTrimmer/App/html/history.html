@@ -11,3 +11,19 @@
         </div>
     </div>
 </div>
+
+<nav>
+    <ul ng-if="pages > 1" class="pagination">
+        <li>
+            <a ng-click="selectPage(1);" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li><a ng-repeat="p in pagination" ng-click="selectPage(p.Page);">{{p.Page}}</a></li>
+        <li>
+            <a ng-click="selectPage(pages);" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
